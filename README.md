@@ -1,35 +1,71 @@
-**SQL Data Cleaning Project: Nashville Housing Dataset**
-
-**Introduction**
-This project focuses on the crucial first step in any data analysis workflow: data cleaning. Using a raw dataset of housing sales in Nashville, Tennessee, this project demonstrates a variety of data cleaning techniques implemented purely in MySQL. The primary goal is to transform the messy, inconsistent raw data into a standardized, structured, and usable format, making it suitable for further analysis and reporting.
-
-**Dataset**: Nashville Housing Data for Data Cleaning on Kaggle
-
-**Tool**: MySQL
-
-**Data Cleaning Process**
-The following steps were taken to clean and prepare the data. Each step addresses a specific data quality issue.
-
-**1. Standardize Date Format**
-The Problem: The SaleDate column was imported as a text field with a non-standard format (e.g., "April 9, 2013"). 
-This format is not suitable for date-based calculations or sorting.
-
-**2. Populate Missing Property Addresses**
-The Problem: Several rows in the dataset had NULL values for the PropertyAddress.
-
-**3. Deconstruct Address into Individual Columns**
-The Problem: The PropertyAddress and OwnerAddress columns contained the full address (street, city, and state) in a single field, 
-making it difficult to query or aggregate data by city or state.
-
-For PropertyAddress, it was split into PropertySplitAddress and PropertySplitCity using the comma as a delimiter.
-For OwnerAddress, it was split into OwnerSplitAddress, OwnerSplitCity, and OwnerSplitState.
-
-**4. Standardize Categorical Data**
-The Problem: The SoldAsVacant column contained four distinct values: 'Y', 'N', 'Yes', and 'No'. This inconsistency can lead to inaccurate aggregations.
-
-**5. Identify and Remove Duplicate Rows**
-The Problem: Duplicate records were present in the dataset, which could skew analytical results.
+# Nashville Housing Data Cleaning with SQL
 
 
-Conclusion
-After completing these cleaning steps, the Nashville Housing dataset is now clean, consistent, and structured. Redundant columns have been removed, data types are appropriate, and values are standardized. The resulting dataset is now in a reliable state, ready for in-depth exploratory data analysis, visualization, and modeling.
+## Executive Summary
+This project focuses on the **critical process of data cleaning using SQL** on the **Nashville Housing Data** dataset.  
+The goal was to transform a **raw, messy dataset** into a **clean, structured, and usable format** ready for in-depth analysis.  
+
+Through a series of **SQL queries**, common data issues such as **missing values, inconsistent formats, and duplicates** were resolved to ensure **data integrity and reliability**.  
+The final output is a **refined dataset** that can be used for **reporting and strategic decision-making** in the real estate market.
+
+---
+
+## Business Problem
+In real-world data analysis, raw data is rarely clean.  
+**Inaccurate or inconsistent data** can lead to **flawed insights** and poor business decisions.  
+
+This project addresses the fundamental **business problem of data quality**, demonstrating how to prepare a dataset for **reliable analysis**.  
+The objective is to create a **clean foundation** from which stakeholders can derive **accurate market insights** such as property value trends and sales patterns.
+
+---
+
+## Methodology
+1. **Data Inspection**  
+   - Identified missing addresses, duplicates, and inconsistent data types.  
+
+2. **Date Standardization**  
+   - Converted `SaleDate` into a consistent format for time-based analysis.  
+
+3. **Handling Missing Values**  
+   - Used **self-joins** on `ParcelID` to populate missing `PropertyAddress` values.  
+
+4. **Data Structuring**  
+   - Split combined address fields (`PropertyAddress`, `OwnerAddress`) into **Street, City, State** using functions like `SUBSTRING`, `CHARINDEX`, and `PARSENAME`.  
+
+5. **Data Standardization**  
+   - Unified the `SoldAsVacant` column values (e.g., Y/N → Yes/No) with a **CASE statement**.  
+
+6. **Duplicate Removal**  
+   - Applied **CTEs** with `ROW_NUMBER()` to identify and remove duplicate rows.  
+
+7. **Column Management**  
+   - Dropped unnecessary columns to streamline the dataset.  
+
+---
+
+## Skills Demonstrated
+- **SQL**: Advanced querying and transformation techniques.  
+- **Data Cleaning**: Handling missing, inconsistent, and duplicate data.  
+- **Database Management**: Structuring columns, tables, and data types.  
+- **Problem-Solving**: Real-world data quality challenges.  
+
+---
+
+## Results
+The cleaning process delivered a **fully transformed dataset**:  
+- All `PropertyAddress` nulls populated.  
+- Addresses neatly separated into **Street, City, State**.  
+- `SoldAsVacant` standardized to only **Yes/No**.  
+- Duplicate records eliminated.  
+- Redundant columns removed for efficiency.  
+
+The dataset is now **ready for analysis** and **business intelligence applications**.  
+
+---
+
+## Business Recommendations
+With the clean dataset, businesses can now explore:  
+- **Market Trend Analysis** → Property value and sales trends over time.  
+- **Geospatial Analysis** → Map-based insights on property sales in high-growth areas.  
+- **Predictive Modeling** → Use in ML models to forecast housing prices.  
+- **Strategic Planning** → Guide investments, acquisitions, and pricing strategies.
