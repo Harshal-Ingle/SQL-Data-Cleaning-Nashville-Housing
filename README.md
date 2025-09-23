@@ -8,7 +8,6 @@ The goal was to transform a **raw, messy dataset** into a **clean, structured, a
 Through a series of **SQL queries**, common data issues such as **missing values, inconsistent formats, and duplicates** were resolved to ensure **data integrity and reliability**.  
 The final output is a **refined dataset** that can be used for **reporting and strategic decision-making** in the real estate market.
 
----
 
 ## Business Problem
 In real-world data analysis, raw data is rarely clean.  
@@ -17,7 +16,6 @@ In real-world data analysis, raw data is rarely clean.
 This project addresses the fundamental **business problem of data quality**, demonstrating how to prepare a dataset for **reliable analysis**.  
 The objective is to create a **clean foundation** from which stakeholders can derive **accurate market insights** such as property value trends and sales patterns.
 
----
 
 ## Methodology
 1. **Data Inspection**  
@@ -41,7 +39,6 @@ The objective is to create a **clean foundation** from which stakeholders can de
 7. **Column Management**  
    - Dropped unnecessary columns to streamline the dataset.  
 
----
 
 ## Skills Demonstrated
 - **SQL**: Advanced querying and transformation techniques.  
@@ -49,7 +46,6 @@ The objective is to create a **clean foundation** from which stakeholders can de
 - **Database Management**: Structuring columns, tables, and data types.  
 - **Problem-Solving**: Real-world data quality challenges.  
 
----
 
 ## Results
 The cleaning process delivered a **fully transformed dataset**:  
@@ -61,7 +57,6 @@ The cleaning process delivered a **fully transformed dataset**:
 
 The dataset is now **ready for analysis** and **business intelligence applications**.  
 
----
 
 ## Business Recommendations
 With the clean dataset, businesses can now explore:  
